@@ -1,19 +1,54 @@
-<div>
-  <label for="num1">Número 1:</label>
-  <input id="num1" [(ngModel)]="num1" type="number">
-</div>
-<div>
-  <label for="num2">Número 2:</label>
-  <input id="num2" [(ngModel)]="num2" type="number">
-</div>
+<div class="container">
+  <div class="row">
+    <h1>Calculadora</h1>
+  </div>
 
-<app-suma [num1]="num1" [num2]="num2"></app-suma>
-<app-resta [num1]="num1" [num2]="num2"></app-resta>
-<app-division [num1]="num1" [num2]="num2"></app-division>
-<app-multiplicacion [num1]="num1" [num2]="num2"></app-multiplicacion>
+  <div class="row">
+    <!--             Numero 1                      -->
+    <p>
+      <label for="num1">Número 1:&nbsp;</label> 
+      <input id="num1" [(ngModel)]="num1" type="number">
+      <br>
+    </p>
+    <!--            Numero 2                       -->
+    <p>
+      <label for="num2">Número 2:&nbsp;</label>
+      <input id="num2" [(ngModel)]="num2" type="number">
+      <br>
+    </p>
+
+  </div>
+  <!--              Operaciones                   -->
+  
+  <div class="row">
+
+    <div class="col-1">
+      <app-suma [num1]="num1" [num2]="num2"></app-suma>
+      <br>
+    </div>
+
+    <div class="col-1">  
+      <app-resta [num1]="num1" [num2]="num2"></app-resta>
+      <br>
+    </div>
+
+    <div class="col-xl-1">  
+      <app-division [num1]="num1" [num2]="num2"></app-division>
+      <br>
+    </div>
+
+    <div class="col-xl-1">    
+      <app-multiplicacion [num1]="num1" [num2]="num2"></app-multiplicacion>
+    </div>
+
+  </div>
 
 
-<div>
-  <label>Resultado:</label>
-  <span>{{ resultadoService.getResultado() }}</span>
+  <!--Resultado-->
+ <div>
+    <br>
+    <label>Resultado:&nbsp;</label>
+    <span>{{ resultadoService.getResultado() }}</span>
+ </div>
+  
 </div>
